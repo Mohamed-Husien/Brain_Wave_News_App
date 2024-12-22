@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class CustomCarouseSlider extends StatelessWidget {
   CustomCarouseSlider({super.key});
   final List<String> imageUrls = [
-    'assets/images/wallpaperflare.com_wallpaper (12).jpg'
-        'assets/images/wallpaperflare.com_wallpaper (12).jpg'
-        'assets/images/wallpaperflare.com_wallpaper (12).jpg'
-        'assets/images/wallpaperflare.com_wallpaper (12).jpg'
+    'assets/images/2.jpg',
+    'assets/images/2.jpg',
+    'assets/images/2.jpg',
+    'assets/images/2.jpg',
   ];
   @override
   Widget build(BuildContext context) {
@@ -49,21 +49,15 @@ class CustomCategoryItem extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 5.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.amber,
+        image: DecorationImage(image: AssetImage(image), fit: BoxFit.fill),
+        color: Colors.grey.withOpacity(.4),
       ),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.asset(
-              image,
-              fit: BoxFit.cover,
-            ),
-          ),
-          const Text(
-            'Sports',
-          )
-        ],
+      child: const Center(
+        child: Text(
+          "category.categoryName",
+          style: TextStyle(
+              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }
