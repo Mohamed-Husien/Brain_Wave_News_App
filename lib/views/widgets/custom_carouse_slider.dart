@@ -37,28 +37,26 @@ class CustomCarouseSlider extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: CarouselSlider(
-        options: CarouselOptions(
-          height: 200.0,
-          autoPlay: true,
-          enlargeCenterPage: true,
-          aspectRatio: 16 / 9,
-          autoPlayInterval: const Duration(seconds: 3),
-          autoPlayAnimationDuration: const Duration(milliseconds: 800),
-          viewportFraction: 0.8,
-          reverse: true,
-        ),
-        items: categories.map((url) {
-          return Builder(
-            builder: (BuildContext context) {
-              return CustomCategoryItem(
-                categoryModel: url,
-              );
-            },
-          );
-        }).toList(),
+    return CarouselSlider(
+      options: CarouselOptions(
+        // height: 200.0,
+        autoPlay: true,
+        enlargeCenterPage: true,
+        aspectRatio: 13 / 5,
+        autoPlayInterval: const Duration(seconds: 3),
+        autoPlayAnimationDuration: const Duration(milliseconds: 800),
+        viewportFraction: 0.8,
+        reverse: true,
       ),
+      items: categories.map((url) {
+        return Builder(
+          builder: (BuildContext context) {
+            return CustomCategoryItem(
+              categoryModel: url,
+            );
+          },
+        );
+      }).toList(),
     );
   }
 }
