@@ -7,31 +7,31 @@ class CustomCarouseSlider extends StatelessWidget {
   const CustomCarouseSlider({super.key});
   final List<CategoryModel> categories = const [
     CategoryModel(
-      image: 'assets/business.avif',
+      image: 'assets/images/business.avif',
       categoryName: 'Business',
     ),
     CategoryModel(
-      image: 'assets/entertaiment.avif',
+      image: 'assets/images/entertaiment.avif',
       categoryName: 'Entertainment',
     ),
     CategoryModel(
-      image: 'assets/health.avif',
+      image: 'assets/images/images (4).jpg',
       categoryName: 'Health',
     ),
     CategoryModel(
-      image: 'assets/science.avif',
+      image: 'assets/images/science.avif',
       categoryName: 'Science',
     ),
     CategoryModel(
-      image: 'assets/technology.jpeg',
+      image: 'assets/images/technology.jpeg',
       categoryName: 'Technology',
     ),
     CategoryModel(
-      image: 'assets/sports.avif',
+      image: 'assets/images/sports.avif',
       categoryName: 'Sports',
     ),
     CategoryModel(
-      image: 'assets/general.avif',
+      image: 'assets/images/general.avif',
       categoryName: 'General',
     ),
   ];
