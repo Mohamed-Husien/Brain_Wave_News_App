@@ -14,17 +14,24 @@ class NewsTile extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(6),
           child: articleModel.image != null
-              ? Image.network(
-                  articleModel.image!,
-                  height: 200,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+              ? AspectRatio(
+                  aspectRatio: 10 / 6,
+                  child: Image.network(
+                    articleModel.image!,
+                    height: 200,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                    loadingBuilder: buildImageLoadingIndicator,
+                  ),
                 )
-              : Image.asset(
-                  'assets/images/news1.jpg',
-                  height: 200,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+              : AspectRatio(
+                  aspectRatio: 10 / 6,
+                  child: Image.asset(
+                    'assets/images/news1.jpg',
+                    height: 200,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
         ),
         const SizedBox(
@@ -50,5 +57,29 @@ class NewsTile extends StatelessWidget {
         )
       ],
     );
+  }
+
+  Widget buildImageLoadingIndicator(
+      BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+    if (loadingProgress == null) {
+      return child; // Image is fully loaded
+    } else {
+      return AspectRatio(
+        aspectRatio: 10 / 5,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: SizedBox(
+            child: CircularProgressIndicator(
+              value: loadingProgress.cumulativeBytesLoaded /
+                  loadingProgress.expectedTotalBytes!
+                      .toInt(), // Set progress (0.0 to 1.0)
+
+              valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
+              backgroundColor: Colors.grey[300],
+            ),
+          ),
+        ),
+      );
+    }
   }
 }

@@ -7,7 +7,11 @@ final class GetNewsCubitInitial extends GetNewsCubitState {}
 
 final class GetNewsCubitLoading extends GetNewsCubitState {}
 
-final class GetNewsCubitSuccess extends GetNewsCubitState {}
+final class GetNewsCubitSuccess extends GetNewsCubitState {
+  final List<ArticleModel> articles;
+
+  GetNewsCubitSuccess({required this.articles});
+}
 
 final class GetNewsCubitFailure extends GetNewsCubitState {
   final String errorMessage;

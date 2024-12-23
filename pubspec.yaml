@@ -28,14 +28,16 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  bloc: 
+  bloc: null
   carousel_slider: ^5.0.0
   cupertino_icons: ^1.0.8
   dio: ^5.7.0
   flutter:
     sdk: flutter
-  flutter_bloc:
-  meta: 
+  flutter_bloc: null
+  meta: null
+  modal_progress_hud_nsn: null
+  webview_flutter: 
 
 dev_dependencies:
   flutter_lints: ^4.0.0

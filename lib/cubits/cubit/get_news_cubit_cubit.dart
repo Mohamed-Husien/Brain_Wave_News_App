@@ -9,7 +9,7 @@ class GetNewsCubitCubit extends Cubit<GetNewsCubitState> {
   GetNewsCubitCubit() : super(GetNewsCubitInitial());
 
   final Dio dio = Dio();
-  Future<List<ArticleModel>> getTopHeadlines({required String category}) async {
+  Future<void> getTopHeadlines({required String category}) async {
     emit(GetNewsCubitLoading());
     try {
       var response = await dio.get(
@@ -25,11 +25,9 @@ class GetNewsCubitCubit extends Cubit<GetNewsCubitState> {
         ArticleModel articleModel = ArticleModel.fromJson(article);
         articlesList.add(articleModel);
       }
-      emit(GetNewsCubitSuccess());
-      return articlesList;
+      emit(GetNewsCubitSuccess(articles: articlesList));
     } catch (e) {
       emit(GetNewsCubitFailure(errorMessage: e.toString()));
-      return [];
     }
   }
 }
