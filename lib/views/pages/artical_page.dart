@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewPage extends StatefulWidget {
-  final String url; // Accepts a URL to display
+  final String url;
 
   const WebViewPage({super.key, required this.url});
 
@@ -11,24 +11,22 @@ class WebViewPage extends StatefulWidget {
 }
 
 class _WebViewPageState extends State<WebViewPage> {
-  late final WebViewController controller; // Late initialization of controller
+  late WebViewController controller;
 
   @override
   void initState() {
     super.initState();
-    // Initialize the WebView when the page loads
-    controller = WebViewController()
-      ..loadRequest(Uri.parse(widget.url)); // Load the passed URL
+    controller = WebViewController()..loadRequest(Uri.parse(widget.url));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("WebView"), // AppBar for the WebView page
-        backgroundColor: Colors.blue,
+        title: const Text("News Articles"),
+        centerTitle: true,
       ),
-      body: WebViewWidget(controller: controller), // WebView displays content
+      body: WebViewWidget(controller: controller),
     );
   }
 }

@@ -10,8 +10,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        elevation: 1,
-        backgroundColor: Colors.transparent,
+        elevation: 0,
         title: const Row(
           mainAxisSize: MainAxisSize.min,
           children: [
