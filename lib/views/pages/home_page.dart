@@ -15,12 +15,12 @@ class HomePage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'News',
-              style: TextStyle(color: Colors.black),
+              'News ',
+              style: TextStyle(color: Color(0xff17E3Fe)),
             ),
             Text(
-              'Cloud',
-              style: TextStyle(color: Colors.orange),
+              'Reader',
+              style: TextStyle(color: Color(0xff2A4CD4)),
             ),
           ],
         ),

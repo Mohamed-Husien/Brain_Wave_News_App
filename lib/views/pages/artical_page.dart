@@ -23,7 +23,19 @@ class _WebViewPageState extends State<WebViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("News Articles"),
+        title: const Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'News ',
+              style: TextStyle(color: Color(0xff17E3Fe)),
+            ),
+            Text(
+              'Articles',
+              style: TextStyle(color: Color(0xff2A4CD4)),
+            ),
+          ],
+        ),
         centerTitle: true,
       ),
       body: WebViewWidget(controller: controller),
